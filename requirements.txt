@@ -15,7 +15,7 @@ joblib>=0.17.0
 threadpoolctl>=2.1.0
 
 # PyTorch - install separately if this fails (see instructions below)
-torch>=1.7.0
+torch>=2.2.2
 torchvision>=0.8.1
 torchaudio>=0.7.0
 
