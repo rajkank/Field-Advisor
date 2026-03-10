@@ -1,0 +1,52 @@
+Data_to_consider/
+References/
+TEST_Project/
+.ipynb_checkpoints/
+.vscode/
+__pycache__/
+New Plant Diseases Dataset(Augmented)/
+Docs/
+.DS_Store
+
+## Environment variable files
+.env
+.env.*
+**/.env
+**/.env.*
+
+## Python virtual environments
+venv/
+.venv/
+
+## Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+## pytest and coverage cache
+.pytest_cache/
+.coverage
+*.cover
+coverage.xml
+htmlcov/
+
+## Logs and debug output
+*.log
+
+## SQLite / local databases
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+## OS-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## IDE settings
+.idea/
+
+CONTRIBUTING.md
+LICENSE
+README.md

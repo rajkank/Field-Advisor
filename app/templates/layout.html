@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ title }}</title>
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<style>
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+	</style>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	</body>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<!-- custom css -->
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
+
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+		rel="stylesheet">
+	<!-- //google fonts -->
+
+	<style>
+		html, body {
+			min-height: 100vh;
+			margin: 0;
+			width: 100%;
+		}
+		html {
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+		}
+		body {
+			padding-top: 56px;
+			overflow-x: hidden;
+		}
+		html::-webkit-scrollbar,
+		body::-webkit-scrollbar {
+			display: none;
+		}
+		header {
+			background-color: rgba(30, 30, 30, 1);
+			margin-top: 0rem;
+			display: block;
+		}
+		.navbar.fixed-top {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			z-index: 1030;
+			background-color: #212529 !important;
+		}
+		.navbar .container {
+			max-width: 100%;
+			width: 100%;
+		}
+		.navbar-brand {
+			background: rgba(0, 0, 0, 0.25);
+			padding: 6px 12px;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			margin-right: 0;
+		}
+		.navbar-brand img {
+			max-height: 58px;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+			display: block;
+		}
+		/* Drawer */
+		.nav-drawer-btn {
+			position: absolute;
+			right: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+			background: transparent;
+			border: 1px solid rgba(255,255,255,0.5);
+			color: #fff;
+			width: 44px;
+			height: 44px;
+			border-radius: 8px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 1031;
+		}
+		.nav-drawer-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
+		.nav-drawer-btn svg { width: 24px; height: 24px; }
+		.drawer-overlay {
+			position: fixed;
+			inset: 0;
+			background: rgba(0,0,0,0.4);
+			z-index: 1040;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s, visibility 0.3s;
+		}
+		.drawer-overlay.open { opacity: 1; visibility: visible; }
+		.drawer-panel {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 280px;
+			max-width: 85vw;
+			height: 100vh;
+			background: #212529;
+			z-index: 1050;
+			box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+			transform: translateX(100%);
+			transition: transform 0.3s ease;
+			padding: 4rem 1.5rem 2rem;
+		}
+		.drawer-panel.open { transform: translateX(0); }
+		.drawer-close {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			background: transparent;
+			border: none;
+			color: #fff;
+			font-size: 1.5rem;
+			cursor: pointer;
+			line-height: 1;
+			padding: 0.25rem;
+		}
+		.drawer-panel h3 { color: #fff; font-size: 1.1rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); }
+		.drawer-panel a {
+			display: block;
+			color: rgba(255,255,255,0.9);
+			padding: 0.75rem 0;
+			text-decoration: none;
+			font-weight: 600;
+			letter-spacing: 1px;
+		}
+		.drawer-panel a:hover { color: #11a065; }
+		.navbar .navbar-collapse { display: none !important; }
+		/* Footer social links */
+		.footer-field-advisor .footer-social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1.25rem;
+			flex-wrap: wrap;
+		}
+		.footer-field-advisor .footer-social-link {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 42px;
+			height: 42px;
+			border-radius: 50%;
+			background: rgba(255,255,255,0.1);
+			color: #fff;
+			transition: background 0.3s, color 0.3s, transform 0.2s;
+		}
+		.footer-field-advisor .footer-social-link:hover {
+			background: #11a065;
+			color: #fff;
+			transform: translateY(-2px);
+		}
+		.footer-field-advisor .footer-social-link i.fa { font-size: 1.25rem; }
+		.footer-field-advisor .footer-social-link svg { vertical-align: middle; }
+		.footer-field-advisor .homelogo { color: rgba(255,255,255,0.85); }
+		.footer-field-advisor .text-muted { color: rgba(255,255,255,0.5) !important; }
+		/* Crop pop-up: centered, two-column, Calibri, larger size */
+		.crop-modal-overlay {
+			position: fixed; inset: 0;
+			background: rgba(0,0,0,0.5);
+			z-index: 1060;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease, visibility 0.3s ease;
+			backdrop-filter: blur(6px);
+		}
+		.crop-modal-overlay.open { opacity: 1; visibility: visible; }
+		.crop-modal-box {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0.92);
+			width: 92%;
+			max-width: 720px;
+			max-height: 92vh;
+			background: #fff;
+			border-radius: 20px;
+			box-shadow: 0 32px 64px -12px rgba(0,0,0,0.35);
+			z-index: 1070;
+			display: flex;
+			flex-direction: column;
+			opacity: 0;
+			visibility: hidden;
+			transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, visibility 0.3s ease;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+		}
+		.crop-modal-overlay.open .crop-modal-box {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(-50%, -50%) scale(1);
+		}
+		.crop-modal-box .crop-modal-header {
+			flex-shrink: 0;
+			background: linear-gradient(145deg, #0d7a50 0%, #0a6b47 50%, #085a3b 100%);
+			color: #fff;
+			padding: 24px 56px 24px 28px;
+			position: relative;
+			border-radius: 20px 20px 0 0;
+			box-shadow: 0 4px 16px rgba(10,107,71,0.25);
+		}
+		.crop-modal-box .crop-modal-header h2 {
+			margin: 0;
+			font-size: 1.25rem;
+			font-weight: 700;
+			line-height: 1.4;
+			color: #fff;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+		}
+		.crop-modal-box .crop-modal-close {
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			transform: translateY(-50%);
+			width: 40px;
+			height: 40px;
+			border: none;
+			background: rgba(255,255,255,0.22);
+			border-radius: 50%;
+			font-size: 1.5rem;
+			line-height: 1;
+			cursor: pointer;
+			color: #fff;
+			transition: background 0.2s;
+		}
+		.crop-modal-box .crop-modal-close:hover { background: rgba(255,255,255,0.4); }
+		.crop-modal-box .crop-modal-body {
+			flex: 1;
+			overflow-y: auto;
+			padding: 28px 32px 32px;
+			background: linear-gradient(180deg, #fafbfc 0%, #f2f5f4 100%);
+			border-radius: 0 0 20px 20px;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+		}
+		.crop-modal-two-col {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 22px 28px;
+		}
+		.crop-modal-two-col .form-group { margin-bottom: 0; }
+		.crop-modal-box .form-group label {
+			display: block;
+			font-weight: 600;
+			color: #1e293b;
+			font-size: 1rem;
+			margin-bottom: 8px;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+		}
+		.crop-modal-box .form-control {
+			width: 100%;
+			border-radius: 12px;
+			border: 1px solid #cbd5e1;
+			padding: 14px 16px;
+			font-size: 1rem;
+			background: #fff;
+			color: #1e293b;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+		}
+		.crop-modal-box .form-control::placeholder {
+			color: #64748b;
+		}
+		/* Modal select (e.g. fertilizer crop) – same colour and text as other inputs */
+		.crop-modal-box select.form-control {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background-color: #fff;
+			color: #1e293b;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+			font-size: 1rem;
+			font-weight: 500;
+			padding-right: 42px;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right 14px center;
+			cursor: pointer;
+		}
+		.crop-modal-box select.form-control option {
+			background: #fff;
+			color: #1e293b;
+			font-family: Calibri, 'Calibri Light', Candara, 'Segoe UI', sans-serif;
+			font-size: 1rem;
+			padding: 12px 16px;
+		}
+		.crop-modal-box select.form-control:invalid,
+		.crop-modal-box select.form-control option[value=""] {
+			color: #64748b;
+		}
+		.crop-select-wrap { position: relative; }
+		.crop-select-display {
+			width: 100%;
+			border-radius: 12px;
+			border: 2px solid #0a6b47;
+			padding: 14px 42px 14px 16px;
+			font-size: 1rem;
+			font-weight: 600;
+			background: #fff;
+			color: #1a1a1a;
+			cursor: pointer;
+			font-family: Calibri, Candara, 'Segoe UI', sans-serif;
+			line-height: 1.5;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230a6b47' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right 14px center;
+			box-sizing: border-box;
+		}
+		.crop-select-display.placeholder { color: #64748b; font-weight: 500; }
+		.crop-select-display:focus { outline: none; border-color: #085a3b; box-shadow: 0 0 0 4px rgba(10,107,71,0.15); }
+		.crop-select-list {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 100%;
+			margin-top: 4px;
+			max-height: 220px;
+			overflow-y: auto;
+			background: #fff;
+			border: 2px solid #0a6b47;
+			border-radius: 12px;
+			box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+			z-index: 10;
+			display: none;
+		}
+		.crop-select-list.open { display: block; }
+		.crop-select-list span {
+			display: block;
+			padding: 12px 16px;
+			cursor: pointer;
+			color: #1a1a1a;
+			font-size: 1rem;
+			font-family: Calibri, Candara, 'Segoe UI', sans-serif;
+			border-bottom: 1px solid #f1f5f9;
+		}
+		.crop-select-list span:hover { background: #f0fdf4; color: #0a6b47; }
+		.crop-select-list span:last-child { border-bottom: none; }
+		.crop-modal-box select.crop-select-native {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			pointer-events: none;
+			z-index: -1;
+		}
+		.crop-modal-box .form-control:focus {
+			outline: none;
+			border-color: #0a6b47;
+			box-shadow: 0 0 0 3px rgba(10,107,71,0.12);
+		}
+		.crop-modal-box .btn-predict, .crop-modal-box .btn-predict-again {
+			width: 100%;
+			margin-top: 16px;
+			padding: 14px 24px;
+			font-size: 1.05rem;
+			font-weight: 700;
+			border-radius: 12px;
+			background: linear-gradient(135deg, #0a6b47 0%, #11a065 100%);
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			transition: transform 0.15s, box-shadow 0.2s;
+		}
+		.crop-modal-box .btn-predict:hover, .crop-modal-box .btn-predict-again:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(10,107,71,0.4);
+		}
+		.crop-result-simple {
+			text-align: center;
+			padding: 24px 16px 8px;
+		}
+		.crop-result-simple .crop-result-text {
+			margin: 0 0 12px 0;
+			font-size: 1.15rem;
+			color: #334155;
+			font-family: Calibri, Candara, 'Segoe UI', sans-serif;
+			line-height: 1.5;
+		}
+		.crop-result-simple .crop-name {
+			margin: 0;
+			font-weight: 700;
+			color: #1e293b;
+			font-size: 1.25rem;
+			display: block;
+		}
+		.crop-modal-body .crop-result-error { color: #dc2626; padding: 16px; background: #fef2f2; border-radius: 12px; font-family: Calibri, Candara, 'Segoe UI', sans-serif; }
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container position-relative">
+			<a class="navbar-brand" href="{{ url_for('home') }}">
+				<img src="{{ url_for('static', filename='images/logo1.png') }}" class="navbar-logo" alt="Field Advisor">
+			</a>
+			<button class="nav-drawer-btn" type="button" id="drawerOpen" aria-label="Open menu">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+			</button>
+		</div>
+	</nav>
+	<!-- Drawer -->
+	<div class="drawer-overlay" id="drawerOverlay"></div>
+	<div class="drawer-panel" id="drawerPanel">
+		<button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+		<h3>Menu</h3>
+		<a href="{{ url_for('home') }}">Home</a>
+		<a href="#" class="open-crop-modal">Crop</a>
+		<a href="#" class="open-fertilizer-modal">Fertilizer</a>
+		<a href="#" class="open-disease-modal">Disease</a>
+	</div>
+	<script>
+		(function() {
+			var openBtn = document.getElementById('drawerOpen');
+			var overlay = document.getElementById('drawerOverlay');
+			var panel = document.getElementById('drawerPanel');
+			var closeBtn = document.getElementById('drawerClose');
+			function openDrawer() { overlay.classList.add('open'); panel.classList.add('open'); }
+			function closeDrawer() { overlay.classList.remove('open'); panel.classList.remove('open'); }
+			openBtn && openBtn.addEventListener('click', openDrawer);
+			closeBtn && closeBtn.addEventListener('click', closeDrawer);
+			overlay && overlay.addEventListener('click', closeDrawer);
+		})();
+	</script>
+
+	<!-- Crop recommendation pop-up (centered, two-column) -->
+	<div class="crop-modal-overlay" id="cropModalOverlay">
+		<div class="crop-modal-box" id="cropModalBox">
+			<div class="crop-modal-header">
+				<h2 id="cropModalTitle">Find out the most suitable crop to grow in your farm</h2>
+				<button type="button" class="crop-modal-close" id="cropModalClose" aria-label="Close">&times;</button>
+			</div>
+			<div class="crop-modal-body" id="cropModalBody">
+				<form id="cropModalForm">
+					<div class="crop-modal-two-col">
+						<div class="form-group">
+							<label for="crop_modal_nitrogen"><b>Nitrogen</b></label>
+							<input type="number" class="form-control" id="crop_modal_nitrogen" name="nitrogen" placeholder="e.g. 50" required />
+						</div>
+						<div class="form-group">
+							<label for="crop_modal_phosphorous"><b>Phosphorous</b></label>
+							<input type="number" class="form-control" id="crop_modal_phosphorous" name="phosphorous" placeholder="e.g. 50" required />
+						</div>
+						<div class="form-group">
+							<label for="crop_modal_pottasium"><b>Potassium</b></label>
+							<input type="number" class="form-control" id="crop_modal_pottasium" name="pottasium" placeholder="e.g. 50" required />
+						</div>
+						<div class="form-group">
+							<label for="crop_modal_ph"><b>pH level</b></label>
+							<input type="number" step="0.01" class="form-control" id="crop_modal_ph" name="ph" placeholder="Enter value" required />
+						</div>
+						<div class="form-group">
+							<label for="crop_modal_rainfall"><b>Rainfall (mm)</b></label>
+							<input type="number" step="0.01" class="form-control" id="crop_modal_rainfall" name="rainfall" placeholder="Enter value" required />
+						</div>
+						<div class="form-group">
+							<label for="crop_modal_sts"><b>State</b></label>
+							<div class="crop-select-wrap">
+								<div class="crop-select-display placeholder" id="crop_state_display" tabindex="0">Select State</div>
+								<div class="crop-select-list" id="crop_state_list"></div>
+								<select id="crop_modal_sts" name="stt" class="form-control crop-select-native" required>
+									<option value="">Select State</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group" style="grid-column: 1 / -1;">
+							<label for="crop_modal_state"><b>City</b></label>
+							<div class="crop-select-wrap">
+								<div class="crop-select-display placeholder" id="crop_city_display" tabindex="0">Select City</div>
+								<div class="crop-select-list" id="crop_city_list"></div>
+								<select id="crop_modal_state" class="form-control crop-select-native" name="city" required>
+									<option value="">Select City</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn-predict">Predict</button>
+				</form>
+				<div id="cropResultContainer" style="display: none;"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function() {
+			var overlay = document.getElementById('cropModalOverlay');
+			var closeBtn = document.getElementById('cropModalClose');
+			var form = document.getElementById('cropModalForm');
+			var body = document.getElementById('cropModalBody');
+			var resultContainer = document.getElementById('cropResultContainer');
+			var modalTitle = document.getElementById('cropModalTitle');
+			var formAction = '{{ url_for("crop_prediction") }}';
+
+			function buildSelectList(selectEl, listEl, displayEl, placeholder) {
+				listEl.innerHTML = '';
+				for (var i = 0; i < selectEl.options.length; i++) {
+					var opt = selectEl.options[i];
+					var span = document.createElement('span');
+					span.textContent = opt.text;
+					span.setAttribute('data-index', i);
+					span.onclick = function() {
+						var idx = parseInt(this.getAttribute('data-index'), 10);
+						selectEl.selectedIndex = idx;
+						displayEl.textContent = selectEl.options[idx].text;
+						displayEl.classList.remove('placeholder');
+						listEl.classList.remove('open');
+						if (selectEl.id === 'crop_modal_sts') {
+							var citySelect = document.getElementById('crop_modal_state');
+							var cityList = document.getElementById('crop_city_list');
+							var cityDisplay = document.getElementById('crop_city_display');
+							cityDisplay.textContent = 'Select City';
+							cityDisplay.classList.add('placeholder');
+							citySelect.length = 0;
+							citySelect.options[0] = new Option('Select City', '');
+							citySelect.selectedIndex = 0;
+							if (idx > 0 && typeof print_city === 'function') print_city('crop_modal_state', idx);
+							buildSelectList(citySelect, cityList, cityDisplay, 'Select City');
+						}
+					};
+					listEl.appendChild(span);
+				}
+			}
+			function openCropModal() {
+				if (document.getElementById('drawerPanel')) {
+					document.getElementById('drawerPanel').classList.remove('open');
+					document.getElementById('drawerOverlay').classList.remove('open');
+				}
+				if (overlay) overlay.classList.add('open');
+				document.body.style.overflow = 'hidden';
+				form.style.display = 'block';
+				resultContainer.style.display = 'none';
+				resultContainer.innerHTML = '';
+				modalTitle.textContent = 'Find out the most suitable crop to grow in your farm';
+				if (typeof print_state === 'function') print_state('crop_modal_sts');
+				var stateSelect = document.getElementById('crop_modal_sts');
+				var citySelect = document.getElementById('crop_modal_state');
+				if (citySelect) {
+					citySelect.length = 0;
+					citySelect.options[0] = new Option('Select City', '');
+					citySelect.selectedIndex = 0;
+				}
+				var stateDisplay = document.getElementById('crop_state_display');
+				var stateList = document.getElementById('crop_state_list');
+				var cityDisplay = document.getElementById('crop_city_display');
+				var cityList = document.getElementById('crop_city_list');
+				if (stateDisplay) { stateDisplay.textContent = 'Select State'; stateDisplay.classList.add('placeholder'); }
+				if (cityDisplay) { cityDisplay.textContent = 'Select City'; cityDisplay.classList.add('placeholder'); }
+				if (stateSelect && stateList && stateDisplay) buildSelectList(stateSelect, stateList, stateDisplay, 'Select State');
+				if (citySelect && cityList && cityDisplay) buildSelectList(citySelect, cityList, cityDisplay, 'Select City');
+			}
+			function setupCropSelects() {
+				var stateDisplay = document.getElementById('crop_state_display');
+				var stateList = document.getElementById('crop_state_list');
+				var cityDisplay = document.getElementById('crop_city_display');
+				var cityList = document.getElementById('crop_city_list');
+				function closeAllLists() { stateList.classList.remove('open'); cityList.classList.remove('open'); }
+				if (stateDisplay && stateList) {
+					stateDisplay.onclick = function(e) { e.stopPropagation(); cityList.classList.remove('open'); stateList.classList.toggle('open'); };
+				}
+				if (cityDisplay && cityList) {
+					cityDisplay.onclick = function(e) { e.stopPropagation(); stateList.classList.remove('open'); cityList.classList.toggle('open'); };
+				}
+				document.addEventListener('click', closeAllLists);
+			}
+			setupCropSelects();
+			function closeCropModal() {
+				if (overlay) overlay.classList.remove('open');
+				document.body.style.overflow = '';
+			}
+			function showResult(prediction) {
+				modalTitle.textContent = 'Crop recommendation result';
+				form.style.display = 'none';
+				resultContainer.style.display = 'block';
+				resultContainer.innerHTML = '<div class="crop-result-simple"><p class="crop-result-text">For your city the recommended crop is</p><p class="crop-name">' + prediction + '</p></div>' +
+					'<button type="button" class="btn-predict-again" id="cropPredictAgain">Predict again</button>';
+				document.getElementById('cropPredictAgain').onclick = function() {
+					form.style.display = 'block';
+					resultContainer.style.display = 'none';
+					resultContainer.innerHTML = '';
+					modalTitle.textContent = 'Find out the most suitable crop to grow in your farm';
+					openCropModal();
+				};
+			}
+			function showError(msg) {
+				form.style.display = 'none';
+				resultContainer.style.display = 'block';
+				resultContainer.innerHTML = '<div class="crop-result-error">' + msg + '</div>' +
+					'<button type="button" class="btn-predict-again" id="cropPredictAgain">Try again</button>';
+				document.getElementById('cropPredictAgain').onclick = function() {
+					form.style.display = 'block';
+					resultContainer.style.display = 'none';
+					resultContainer.innerHTML = '';
+					openCropModal();
+				};
+			}
+			form && form.addEventListener('submit', function(e) {
+				e.preventDefault();
+				var btn = form.querySelector('.btn-predict');
+				if (btn) { btn.disabled = true; btn.textContent = 'Predicting…'; }
+				var fd = new FormData(form);
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', formAction);
+				xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+				xhr.onload = function() {
+					if (btn) { btn.disabled = false; btn.textContent = 'Predict'; }
+					try {
+						var res = JSON.parse(xhr.responseText);
+						if (res.success && res.prediction) showResult(res.prediction);
+						else showError(res.error || 'Something went wrong.');
+					} catch (err) { showError('Something went wrong. Please try again.'); }
+				};
+				xhr.onerror = function() {
+					if (btn) { btn.disabled = false; btn.textContent = 'Predict'; }
+					showError('Network error. Please try again.');
+				};
+				xhr.send(fd);
+			});
+			closeBtn && closeBtn.addEventListener('click', closeCropModal);
+			overlay && overlay.addEventListener('click', function(e) { if (e.target === overlay) closeCropModal(); });
+			document.addEventListener('click', function(e) {
+				var t = e.target.closest && e.target.closest('.open-crop-modal');
+				if (t) { e.preventDefault(); openCropModal(); }
+			});
+		})();
+	</script>
+
+	<!-- Fertilizer recommendation pop-up (styled like Crop modal) -->
+	<div class="crop-modal-overlay" id="fertilizerModalOverlay">
+		<div class="crop-modal-box" id="fertilizerModalBox">
+			<div class="crop-modal-header">
+				<h2 id="fertilizerModalTitle">Get informed advice on fertilizer based on soil</h2>
+				<button type="button" class="crop-modal-close" id="fertilizerModalClose" aria-label="Close">&times;</button>
+			</div>
+			<div class="crop-modal-body" id="fertilizerModalBody">
+				<form id="fertilizerModalForm">
+					<div class="crop-modal-two-col">
+						<div class="form-group">
+							<label for="fert_modal_nitrogen"><b>Nitrogen</b></label>
+							<input type="number" class="form-control" id="fert_modal_nitrogen" name="nitrogen" placeholder="e.g. 50" required />
+						</div>
+						<div class="form-group">
+							<label for="fert_modal_phosphorous"><b>Phosphorous</b></label>
+							<input type="number" class="form-control" id="fert_modal_phosphorous" name="phosphorous" placeholder="e.g. 50" required />
+						</div>
+						<div class="form-group">
+							<label for="fert_modal_pottasium"><b>Potassium</b></label>
+							<input type="number" class="form-control" id="fert_modal_pottasium" name="pottasium" placeholder="e.g. 50" required />
+						</div>
+						<div class="form-group" style="grid-column: 1 / -1;">
+							<label for="fert_modal_crop"><b>Crop you want to grow</b></label>
+							<div class="crop-select-wrap">
+								<div class="crop-select-display placeholder" id="fert_crop_display" tabindex="0">Select crop</div>
+								<div class="crop-select-list" id="fert_crop_list"></div>
+								<select name="cropname" class="form-control crop-select-native" id="fert_modal_crop" required>
+									<option value="">Select crop</option>
+									{% for crop in fertilizer_crops %}
+									<option value="{{ crop }}">{{ crop }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn-predict">Predict</button>
+				</form>
+				<div id="fertilizerResultContainer" style="display: none;"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function() {
+			var overlay = document.getElementById('fertilizerModalOverlay');
+			var closeBtn = document.getElementById('fertilizerModalClose');
+			var form = document.getElementById('fertilizerModalForm');
+			var body = document.getElementById('fertilizerModalBody');
+			var resultContainer = document.getElementById('fertilizerResultContainer');
+			var modalTitle = document.getElementById('fertilizerModalTitle');
+			var formAction = '{{ url_for("fert_recommend") }}';
+				var cropSelect = document.getElementById('fert_modal_crop');
+				var cropDisplay = document.getElementById('fert_crop_display');
+				var cropList = document.getElementById('fert_crop_list');
+
+				function buildSimpleSelectList(selectEl, listEl, displayEl, placeholder) {
+					if (!selectEl || !listEl || !displayEl) return;
+					listEl.innerHTML = '';
+					for (var i = 0; i < selectEl.options.length; i++) {
+						(function(idx) {
+							var opt = selectEl.options[idx];
+							var span = document.createElement('span');
+							span.textContent = opt.text;
+							span.onclick = function() {
+								selectEl.selectedIndex = idx;
+								if (selectEl.value) {
+									displayEl.textContent = opt.text;
+									displayEl.classList.remove('placeholder');
+								} else {
+									displayEl.textContent = placeholder;
+									displayEl.classList.add('placeholder');
+								}
+								listEl.classList.remove('open');
+							};
+							listEl.appendChild(span);
+						})(i);
+					}
+				}
+
+				function initFertCropSelect() {
+					if (!cropSelect || !cropDisplay || !cropList) return;
+					buildSimpleSelectList(cropSelect, cropList, cropDisplay, 'Select crop');
+					if (cropSelect.value) {
+						cropDisplay.textContent = cropSelect.options[cropSelect.selectedIndex].text;
+						cropDisplay.classList.remove('placeholder');
+					} else {
+						cropDisplay.textContent = 'Select crop';
+						cropDisplay.classList.add('placeholder');
+					}
+				}
+
+			function openFertilizerModal() {
+				if (document.getElementById('drawerPanel')) {
+					document.getElementById('drawerPanel').classList.remove('open');
+					document.getElementById('drawerOverlay').classList.remove('open');
+				}
+				if (overlay) overlay.classList.add('open');
+				document.body.style.overflow = 'hidden';
+				form.style.display = 'block';
+				resultContainer.style.display = 'none';
+				resultContainer.innerHTML = '';
+				modalTitle.textContent = 'Get informed advice on fertilizer based on soil';
+					initFertCropSelect();
+			}
+			function closeFertilizerModal() {
+				if (overlay) overlay.classList.remove('open');
+				document.body.style.overflow = '';
+			}
+			function showFertResult(html) {
+				modalTitle.textContent = 'Fertilizer recommendation';
+				form.style.display = 'none';
+				resultContainer.style.display = 'block';
+				resultContainer.innerHTML = '<div class="crop-result-simple"><div class="fert-recommendation-text" style="text-align:left; color:#334155; font-size:1rem; line-height:1.6;">' + html + '</div></div>' +
+					'<button type="button" class="btn-predict-again" id="fertPredictAgain">Predict again</button>';
+				document.getElementById('fertPredictAgain').onclick = function() {
+					form.style.display = 'block';
+					resultContainer.style.display = 'none';
+					resultContainer.innerHTML = '';
+					modalTitle.textContent = 'Get informed advice on fertilizer based on soil';
+					openFertilizerModal();
+				};
+			}
+			function showFertError(msg) {
+				form.style.display = 'none';
+				resultContainer.style.display = 'block';
+				resultContainer.innerHTML = '<div class="crop-result-error">' + msg + '</div>' +
+					'<button type="button" class="btn-predict-again" id="fertPredictAgain">Try again</button>';
+				document.getElementById('fertPredictAgain').onclick = function() {
+					form.style.display = 'block';
+					resultContainer.style.display = 'none';
+					resultContainer.innerHTML = '';
+					openFertilizerModal();
+				};
+			}
+			form && form.addEventListener('submit', function(e) {
+				e.preventDefault();
+				var btn = form.querySelector('.btn-predict');
+				if (btn) { btn.disabled = true; btn.textContent = 'Predicting…'; }
+				var fd = new FormData(form);
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', formAction);
+				xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+				xhr.onload = function() {
+					if (btn) { btn.disabled = false; btn.textContent = 'Predict'; }
+					try {
+						var res = JSON.parse(xhr.responseText);
+						if (res.success && res.recommendation) showFertResult(res.recommendation);
+						else showFertError(res.error || 'Something went wrong.');
+					} catch (err) { showFertError('Something went wrong. Please try again.'); }
+				};
+				xhr.onerror = function() {
+					if (btn) { btn.disabled = false; btn.textContent = 'Predict'; }
+					showFertError('Network error. Please try again.');
+				};
+				xhr.send(fd);
+			});
+			closeBtn && closeBtn.addEventListener('click', closeFertilizerModal);
+			overlay && overlay.addEventListener('click', function(e) { if (e.target === overlay) closeFertilizerModal(); });
+			(function setupFertCropSelectInteractions() {
+				if (!cropDisplay || !cropList) return;
+				function closeCropList() { cropList.classList.remove('open'); }
+				cropDisplay.onclick = function(e) {
+					e.stopPropagation();
+					cropList.classList.toggle('open');
+				};
+				document.addEventListener('click', closeCropList);
+			})();
+			document.addEventListener('click', function(e) {
+				var t = e.target.closest && e.target.closest('.open-fertilizer-modal');
+				if (t) { e.preventDefault(); openFertilizerModal(); }
+			});
+		})();
+	</script>
+
+	<!-- Disease detection pop-up (styled like Crop modal) -->
+	<div class="crop-modal-overlay" id="diseaseModalOverlay">
+		<div class="crop-modal-box" id="diseaseModalBox">
+			<div class="crop-modal-header">
+				<h2 id="diseaseModalTitle">Find out which disease has been caught by your plant</h2>
+				<button type="button" class="crop-modal-close" id="diseaseModalClose" aria-label="Close">&times;</button>
+			</div>
+			<div class="crop-modal-body" id="diseaseModalBody">
+				<form id="diseaseModalForm" enctype="multipart/form-data">
+					<div class="form-group" style="text-align:center;">
+						<label for="disease_modal_file" class="mb-3"><b>Please Upload The Image</b></label>
+						<input type="file" name="file" class="form-control-file" id="disease_modal_file" accept="image/*" required>
+					</div>
+					<div class="form-group" style="text-align:center; margin-top: 16px;">
+						<img id="disease_output_image" class="rounded mx-auto d-block" style="max-width:100%; height:auto; display:none;" />
+					</div>
+					<button type="submit" class="btn-predict">Predict</button>
+				</form>
+				<div id="diseaseResultContainer" style="display: none;"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function () {
+			var overlay = document.getElementById('diseaseModalOverlay');
+			var closeBtn = document.getElementById('diseaseModalClose');
+			var form = document.getElementById('diseaseModalForm');
+			var resultContainer = document.getElementById('diseaseResultContainer');
+			var modalTitle = document.getElementById('diseaseModalTitle');
+			var fileInput = document.getElementById('disease_modal_file');
+			var previewImg = document.getElementById('disease_output_image');
+			var formAction = '{{ url_for("disease_prediction") }}';
+
+			function openDiseaseModal() {
+				if (document.getElementById('drawerPanel')) {
+					document.getElementById('drawerPanel').classList.remove('open');
+					document.getElementById('drawerOverlay').classList.remove('open');
+				}
+				if (overlay) overlay.classList.add('open');
+				document.body.style.overflow = 'hidden';
+				modalTitle.textContent = 'Find out which disease has been caught by your plant';
+				form.style.display = 'block';
+				resultContainer.style.display = 'none';
+				resultContainer.innerHTML = '';
+				if (previewImg) {
+					previewImg.style.display = 'none';
+					previewImg.src = '';
+				}
+				if (fileInput) {
+					fileInput.value = '';
+				}
+			}
+
+			function closeDiseaseModal() {
+				if (overlay) overlay.classList.remove('open');
+				document.body.style.overflow = '';
+			}
+
+			function showDiseaseResult(html) {
+				modalTitle.textContent = 'Disease detection result';
+				form.style.display = 'none';
+				resultContainer.style.display = 'block';
+				resultContainer.innerHTML = '<div class="crop-result-simple"><div class="fert-recommendation-text" style="text-align:left; color:#334155; font-size:1rem; line-height:1.6;">' + html + '</div></div>' +
+					'<button type="button" class="btn-predict-again" id="diseasePredictAgain">Predict again</button>';
+				document.getElementById('diseasePredictAgain').onclick = function () {
+					form.style.display = 'block';
+					resultContainer.style.display = 'none';
+					resultContainer.innerHTML = '';
+					modalTitle.textContent = 'Find out which disease has been caught by your plant';
+					openDiseaseModal();
+				};
+			}
+
+			function showDiseaseError(msg) {
+				form.style.display = 'none';
+				resultContainer.style.display = 'block';
+				resultContainer.innerHTML = '<div class="crop-result-error">' + msg + '</div>' +
+					'<button type="button" class="btn-predict-again" id="diseasePredictAgain">Try again</button>';
+				document.getElementById('diseasePredictAgain').onclick = function () {
+					form.style.display = 'block';
+					resultContainer.style.display = 'none';
+					resultContainer.innerHTML = '';
+					openDiseaseModal();
+				};
+			}
+
+			if (fileInput && previewImg) {
+				fileInput.addEventListener('change', function (event) {
+					var file = event.target.files[0];
+					if (!file) {
+						previewImg.style.display = 'none';
+						previewImg.src = '';
+						return;
+					}
+					var reader = new FileReader();
+					reader.onload = function () {
+						previewImg.src = reader.result;
+						previewImg.style.display = 'block';
+					};
+					reader.readAsDataURL(file);
+				});
+			}
+
+			form && form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				var btn = form.querySelector('.btn-predict');
+				if (btn) {
+					btn.disabled = true;
+					btn.textContent = 'Predicting…';
+				}
+				var fd = new FormData(form);
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', formAction);
+				xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+				xhr.onload = function () {
+					if (btn) {
+						btn.disabled = false;
+						btn.textContent = 'Predict';
+					}
+					try {
+						var res = JSON.parse(xhr.responseText);
+						if (res.success && res.prediction) {
+							showDiseaseResult(res.prediction);
+						} else {
+							showDiseaseError(res.error || 'Something went wrong.');
+						}
+					} catch (err) {
+						showDiseaseError('Something went wrong. Please try again.');
+					}
+				};
+				xhr.onerror = function () {
+					if (btn) {
+						btn.disabled = false;
+						btn.textContent = 'Predict';
+					}
+					showDiseaseError('Network error. Please try again.');
+				};
+				xhr.send(fd);
+			});
+
+			closeBtn && closeBtn.addEventListener('click', closeDiseaseModal);
+			overlay && overlay.addEventListener('click', function (e) {
+				if (e.target === overlay) closeDiseaseModal();
+			});
+
+			document.addEventListener('click', function (e) {
+				var t = e.target.closest && e.target.closest('.open-disease-modal');
+				if (t) {
+					e.preventDefault();
+					openDiseaseModal();
+				}
+			});
+		})();
+	</script>
+
+	{% block body %} {% endblock %}
+
+	<!-- footer -->
+	<footer class="text-center py-5 footer-field-advisor">
+		<div class="container py-md-4">
+			<h2 class="logo2 text-center">
+				<a href="{{ url_for('home') }}">Field Advisor</a>
+			</h2>
+			<p class="text-da mt-2 mb-3">An Environmental Intelligence Startup</p>
+			<div class="footer-social mt-4 mb-4">
+				<a href="https://www.linkedin.com/in/rajkank/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+				</a>
+				<a href="https://github.com/rajkank" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.63-5.373-12-12-12"/></svg>
+				</a>
+				<a href="https://www.kaggle.com/rajkank" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Kaggle">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.042 4.02h1.578v2.52c.44-.664 1.04-1 1.8-1 .736 0 1.32.264 1.752.792.432.528.648 1.224.648 2.088 0 .864-.216 1.572-.648 2.124-.432.552-1.016.828-1.752.828-.688 0-1.248-.32-1.68-.96v.78H10.86V4.02zm-5.22 4.2h1.62v6.12h2.16v-6.12h1.62V4.02H8.442v4.2zm5.4 2.52c0-.48-.12-.864-.36-1.152-.24-.288-.564-.432-.972-.432-.42 0-.756.156-1.008.468-.252.312-.378.708-.378 1.188 0 .48.126.876.378 1.176.252.3.588.45 1.008.45.408 0 .732-.144.972-.432.24-.288.36-.672.36-1.152z"/></svg>
+				</a>
+			</div>
+			<p class="homelogo mb-0">
+				Made with by <strong>Raj Sudhir Kank</strong><br>
+				<small class="text-muted">&copy; 2023 Field Advisor</small>
+			</p>
+		</div>
+	</footer>
+	<!-- //footer -->
+
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center"></a>
+	<!-- //move top icon -->
+</body>
+
+</html>
