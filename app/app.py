@@ -1,18 +1,20 @@
-# Importing essential libraries and modules
+import io
+import os
+import pickle
 
-from flask import Flask, render_template, request, jsonify, redirect
-from markupsafe import Markup
 import numpy as np
 import pandas as pd
+import requests
+import torch
+from flask import Flask, render_template, request, jsonify, redirect
+from markupsafe import Markup
+from PIL import Image
+from sklearn.ensemble import RandomForestClassifier
+from torchvision import transforms
+
+import config
 from utils.disease import disease_dic
 from utils.fertilizer import fertilizer_dic
-import requests
-import config
-import pickle
-import io
-import torch
-from torchvision import transforms
-from PIL import Image
 from utils.model import ResNet9
 # ==============================================================================================
 
@@ -66,11 +68,64 @@ disease_model.load_state_dict(torch.load(
 disease_model.eval()
 
 
-# Loading crop recommendation model
+def load_crop_recommendation_model():
+    """
+    Load crop recommendation model from pickle.
+    If loading fails due to scikit-learn version incompatibility,
+    retrain a compatible RandomForest model from processed data.
+    """
+    model_path = 'models/RandomForest.pkl'
+    try:
+        with open(model_path, 'rb') as f:
+            return pickle.load(f)
+    except Exception as e:
+        # Lazy import of app logger to avoid circular reference during app creation
+        try:
+            # Will be bound after app is created; safe to skip logging if not yet available
+            from flask import current_app
 
-crop_recommendation_model_path = 'models/RandomForest.pkl'
-crop_recommendation_model = pickle.load(
-    open(crop_recommendation_model_path, 'rb'))
+            current_app.logger.warning(
+                "Failed to load crop model from %s (%s). Retraining with current scikit-learn.",
+                model_path,
+                e,
+            )
+        except Exception:
+            pass
+
+        data_path_options = [
+            '../Data-processed/crop_recommendation.csv',
+            '../Data-processed/crop-recommendation.csv',
+        ]
+        df = None
+        for p in data_path_options:
+            if os.path.exists(p):
+                df = pd.read_csv(p)
+                break
+        if df is None:
+            raise FileNotFoundError(
+                "Could not find processed crop recommendation data at expected paths: "
+                + ", ".join(data_path_options)
+            )
+
+        X = df.drop('label', axis=1)
+        y = df['label']
+
+        rf = RandomForestClassifier(n_estimators=20, random_state=0)
+        rf.fit(X, y)
+
+        # Try to persist the newly trained model for faster subsequent starts
+        try:
+            os.makedirs(os.path.dirname(model_path), exist_ok=True)
+            with open(model_path, 'wb') as f:
+                pickle.dump(rf, f)
+        except Exception:
+            # If persisting fails (read-only FS, etc.), still return the trained model
+            pass
+
+        return rf
+
+
+crop_recommendation_model = load_crop_recommendation_model()
 
 # Preload fertilizer data once and expose crop list to templates
 fertilizer_df = pd.read_csv('Data/fertilizer.csv')
