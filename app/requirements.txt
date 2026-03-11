@@ -1,9 +1,14 @@
-numpy
-pandas
-Flask
-scikit-learn
-https://download.pytorch.org/whl/cpu/torch-1.7.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
-https://download.pytorch.org/whl/cpu/torchvision-0.8.1%2Bcpu-cp36-cp36m-linux_x86_64.whl
-requests
-Pillow
-gunicorn == 20.0.4
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+Flask==1.1.2
+gunicorn==20.0.4
+numpy>=1.19.4,<1.24.0
+pandas>=1.1.4,<1.6.0
+Pillow>=8.0.1,<10.0.0
+requests>=2.25.0
+scikit-learn>=0.23.2,<0.25.0
+
+# PyTorch (CPU) - avoid hard-pinning ancient cp36 wheels
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
