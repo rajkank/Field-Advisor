@@ -61,11 +61,25 @@ disease_classes = ['Apple___Apple_scab',
                    'Tomato___Tomato_mosaic_virus',
                    'Tomato___healthy']
 
+_disease_model = None
 disease_model_path = 'models/plant_disease_model.pth'
-disease_model = ResNet9(3, len(disease_classes))
-disease_model.load_state_dict(torch.load(
-    disease_model_path, map_location=torch.device('cpu')))
-disease_model.eval()
+
+
+def get_disease_model():
+    """
+    Lazily load the plant disease model on first use to
+    keep Gunicorn worker startup fast in production.
+    """
+    global _disease_model
+    if _disease_model is None:
+        model = ResNet9(3, len(disease_classes))
+        state_dict = torch.load(
+            disease_model_path, map_location=torch.device('cpu')
+        )
+        model.load_state_dict(state_dict)
+        model.eval()
+        _disease_model = model
+    return _disease_model
 
 
 def load_crop_recommendation_model():
@@ -186,7 +200,7 @@ def weather_fetch(city_name):
     return temperature, humidity
 
 
-def predict_image(img, model=disease_model):
+def predict_image(img, model=None):
     """
     Transforms image to tensor and predicts disease label
     :params: image
@@ -200,8 +214,9 @@ def predict_image(img, model=disease_model):
     img_t = transform(image)
     img_u = torch.unsqueeze(img_t, 0)
 
-    # Get predictions from model
-    yb = model(img_u)
+    # Get predictions from lazily loaded model
+    mdl = model or get_disease_model()
+    yb = mdl(img_u)
     # Pick index with highest probability
     _, preds = torch.max(yb, dim=1)
     prediction = disease_classes[preds[0].item()]
